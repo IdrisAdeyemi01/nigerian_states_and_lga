@@ -30,15 +30,15 @@ dependencies:
     nigerian_states_and_lga: ^latest_version
 ```
 
-### Import
+### 💡 Import
 
 ```dart
 import 'package:nigerian_states_and_lga/nigerian_states_and_lga.dart';
 ```
 
-### Usage
+## 🛠️ Usage
 
-### To get the states
+#### To get the states
 ```dart
 DropdownButton<String>(
                   key: const ValueKey('States'),
@@ -54,7 +54,7 @@ DropdownButton<String>(
                   }).toList(),
 ```
 
-### To get LGAs per state
+#### To get LGAs per state
 ```dart
 DropdownButton<String>(
                   key: const ValueKey('Local governments'),
@@ -85,6 +85,10 @@ DropdownButton<String>(
                     );
                   }).toList(),
 ```
+
+## 🎥 Sample
+
+[Example](https://github.com/IdrisAdeyemi01/nigerian_states_and_lga/blob/main/sample%20video/nigerian_states_and_lga.mp4)
 
 ## 🪲 Bugs/ Feature Requests
 
