@@ -37,7 +37,6 @@ class NigerianStatesAndLGA {
     "Yobe",
     "Zamfara",
     "FCT(Abuja)",
-    'Select a State',
   ];
 
   static const abiaLGAs = [
@@ -894,7 +893,8 @@ class NigerianStatesAndLGA {
     "Nguru",
     "Potiskum",
     "Tarmuwa",
-    "Yunusari"
+    "Yunusari",
+    "Yusufari"
   ];
 
   static const zamfaraLGAs = [

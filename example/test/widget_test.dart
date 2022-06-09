@@ -11,20 +11,28 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:example/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Check the performance of the DropdownButton',
+      (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    //Find 3 DropdownButton
+    expect(find.byType(DropdownButton<String>), findsNWidgets(3));
+    expect(
+        find.widgetWithText(DropdownButton<String>, 'Lagos'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    //Checking for a Local government after tapping on a state
+    final statesDropdown =
+        find.byKey(const ValueKey('States')); //Finds the States DropdownButton
+    await tester.tap(statesDropdown); //Clicks on it
+    await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    //Finds the states and click on Abia
+    final abiaItem = find.widgetWithText(DropdownMenuItem<String>, 'Abia').last;
+    await tester.tap(abiaItem);
+    await tester.pumpAndSettle();
+
+    //Search for a Local government in Abia
+    expect(find.text("Aba North"), findsNWidgets(2));
   });
 }

@@ -11,29 +11,89 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# Nigerian States and Local Governments
+
+This is a package that helps provide a full list of Nigerian states and local governments.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- List of all states in Nigeria
+- List of all local governments in Nigeria
+- List of local governments per state in Nigeria
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### 🎖 Installing
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+    nigerian_states_and_lga: ^latest_version
 ```
 
-## Additional information
+### Import
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+import 'package:nigerian_states_and_lga/nigerian_states_and_lga.dart';
+```
+
+### Usage
+
+### To get the states
+```dart
+DropdownButton<String>(
+                  key: const ValueKey('States'),
+                  value: stateValue,
+                  isExpanded: true,
+                  hint: const Text('Select a Nigerian state'),
+                  items: NigerianStatesAndLGA.allStates
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      child: Text(value),
+                      value: value,
+                    );
+                  }).toList(),
+```
+
+### To get LGAs per state
+```dart
+DropdownButton<String>(
+                  key: const ValueKey('Local governments'),
+                  value: lgaValue,
+                  isExpanded: true,
+                  hint: const Text('Select a Lga'),
+                  items:
+                      statesLga.map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      child: Text(value),
+                      value: value,
+                    );
+                  }).toList(),
+```
+
+### To get all LGAs at a go
+
+```dart
+DropdownButton<String>(
+                  value: selectedLGAFromAllLGAs,
+                  isExpanded: true,
+                  hint: const Text('Select a Lga'),
+                  items: NigerianStatesAndLGA.getAllNigerianLGAs()
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      child: Text(value),
+                      value: value,
+                    );
+                  }).toList(),
+```
+
+## 🪲 Bugs/ Feature Requests
+
+If you encounter any issues while using the package, feel free to open an issue. If you also feel the package is missing any feature, please raise an issue on [Github](https://github.com/IdrisAdeyemi01/nigerian_states_and_lga/issues). 
+
+## 🫂 Contribution
+
+Contributions are highly welcomed. Please free free to open a pull request so that we can all improve this package together.
+
+
+
+
