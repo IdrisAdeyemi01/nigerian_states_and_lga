@@ -88,7 +88,8 @@ DropdownButton<String>(
 
 ## 🎥 Sample
 
-![Sample Video](./sample%20video/nigerian_states_and_lga.mp4)
+https://user-images.githubusercontent.com/49335945/172783733-3caeb79b-7686-49ec-83e7-8a0b83e5a280.mp4
+
 
 ## 🪲 Bugs/ Feature Requests
 
